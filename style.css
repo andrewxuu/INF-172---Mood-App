@@ -1,11 +1,10 @@
 /* Base Variables & Reset */
 :root {
-    --bg-cream: #F4F7F9;
-    --text-navy: #0064A4;
+    --bg-cream: #F8F7F2;
+    --text-navy: #151D29;
     --text-gray: #4B5563;
-    --accent-purple: #FFD200;
-    --btn-dark: #0064A4;
-    --text-dark: #151D29;
+    --accent-purple: #907CBA;
+    --btn-dark: #1E293B;
 }
 
 * {
