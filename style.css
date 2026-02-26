@@ -1,4 +1,4 @@
-/* Base Variables & Reset */
+/* Base Variables*/
 :root {
     --bg-cream: #F8F7F2;
     --text-navy: #151D29;
@@ -22,11 +22,22 @@ body {
     background-color: var(--bg-cream);
     color: var(--text-dark);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, .serif-text {
     font-family: 'Lora', serif;
     color: var(--text-navy);
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+@media (max-width: 900px) {
+    section {
+        scroll-margin-top: 100px;
+    }
 }
 
 /* Navigation Menu */
@@ -380,18 +391,64 @@ footer {
 }
 
 @media (max-width: 900px) {
+    nav {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
     .hero, .milestones-wrapper {
         flex-direction: column;
         text-align: center;
     }
-    .hero-text { padding-right: 0; }
-    .three-col-grid, .cards-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .team-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-    .footer-links { flex-direction: column; gap: 2rem; align-items: center; text-align: center; }
-    nav { padding: 1rem 2rem; }
-    nav ul { display: none; }
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+    .three-col-grid, .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .col-item p {
+        text-align: center;
+    }
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 @media (max-width: 600px) {
+    .hero { padding: 4rem 1rem; min-height: auto; }
+    .overview-section, .milestones-section, .team-section { padding: 4rem 1rem; }
+    .container { padding: 0 1rem; }
+    
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1rem; }
+    .overview-section h2, .team-section h2, .footer-cta h2 { font-size: 2rem; }
+    
     .team-grid { grid-template-columns: 1fr; }
+    
+    .milestones-image .blob-placeholder { height: 250px; }
+    
+    .subscribe-form {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .subscribe-form input, .subscribe-form button {
+        width: 100%;
+        max-width: 100%;
+    }
 }
